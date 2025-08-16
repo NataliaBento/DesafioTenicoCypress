@@ -6,6 +6,7 @@ const INPUT_AGE = '#age'
 const INPUT_SALARY = '#salary'
 const INPUT_DEPARTAMENT = '#department'
 const BTN_SUBMIT = '#submit' 
+const LINHA = '.rt-tr-group'
 
 Cypress.Commands.add('botaoadd', () => {
     cy.get(BTN_ADD).click()
@@ -25,7 +26,11 @@ Cypress.Commands.add('confirmarcadastro', () => {
 })
 
 Cypress.Commands.add('cadastroconcluido', () => {
-  cy.get(BTN_ADD).should('be.visible'); 
+  cy.get(BTN_ADD).should('be.visible') 
 })
 
+
+Cypress.Commands.add('validarEmailNaTabela', () => {
+    cy.contains(LINHA, Cypress.env('email'), {log: false}).should('exist');
+})
 
