@@ -12,7 +12,7 @@ And('preencho os campos de cadastro com dados válidos', () => {
     cy.cadastro()
 })
 
-And('clico no botao de confirmacao', () => {
+When('clico no botao de confirmacao', () => {
     cy.confirmarcadastro()
 })
 

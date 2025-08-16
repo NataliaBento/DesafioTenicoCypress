@@ -7,6 +7,7 @@ const INPUT_SALARY = '#salary'
 const INPUT_DEPARTAMENT = '#department'
 const BTN_SUBMIT = '#submit' 
 const LINHA = '.rt-tr-group'
+const BTN_DELETE = '#delete-record-4'
 
 Cypress.Commands.add('botaoadd', () => {
     cy.get(BTN_ADD).click()
@@ -31,6 +32,14 @@ Cypress.Commands.add('cadastroconcluido', () => {
 
 
 Cypress.Commands.add('validarEmailNaTabela', () => {
-    cy.contains(LINHA, Cypress.env('email'), {log: false}).should('exist');
+    cy.contains(LINHA, Cypress.env('email'), {log: false}).should('exist')
+})
+
+Cypress.Commands.add('excluir', () => {
+  cy.get(BTN_DELETE).click()
+})
+
+Cypress.Commands.add('validaexclusao', () => {
+    cy.contains(LINHA, Cypress.env('email'), {log: false}).should('not.exist')
 })
 
