@@ -2,7 +2,7 @@
 
 Funcionalidade: Gerenciar cadastros na tabela
 
-  Cenário: Cadastrar e editar um usuário existente
+  Cenário: editar um usuário existente
 
     Quando clico no ícone de edicao
     E escolho um campo para alterar

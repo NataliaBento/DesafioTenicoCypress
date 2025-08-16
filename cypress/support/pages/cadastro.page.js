@@ -49,8 +49,10 @@ Cypress.Commands.add('editar', () => {
 })
 
 Cypress.Commands.add('campoalteracao', () => {
-  cy.get(INPUT_LAST_NAME, { timeout: 10000 }).should('be.visible').clear().type(Cypress.env('sobrenomeeditado'), { log: false}) 
-
+  cy.get(INPUT_LAST_NAME, { timeout: 10000 }) 
+    .should('be.visible')                     
+    .clear()                                  
+    .type(Cypress.env('sobrenomeeditado'), { log: false }) 
 })
 
 Cypress.Commands.add('enviaralteracao', () => {

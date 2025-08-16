@@ -5,7 +5,6 @@ Before(() => {
   cy.botaoadd()
   cy.cadastro()
   cy.confirmarcadastro()
-  cy.cadastroconcluido()
 })
 
 When ('clico no ícone de exclusão', () => {
