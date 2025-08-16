@@ -18,3 +18,127 @@ import './commands'
 import './pages/cadastro.page'
 import './pages/edicao.page'
 import './pages/exclusao.page'
+
+
+
+
+
+beforeEach(() => {
+  const block = [
+    '/pagead/',
+    '/pagead2/',
+    'securepubads.g.doubleclick.net/',
+    'securepubads.g.doubleclick.net/gampad/ads?',
+    'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+    '/ads/',
+    '/gampad/',
+    '/googlesyndication.com/',
+    '/doubleclick.net/',
+    '/google-analytics.com/',
+    '/googletagmanager.com/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    '/adservice.google.com/',
+    '/adservice.google.com.br/',
+    '/adservice.google.com/adsid/',
+    '/adservice.google.com/pagead/',
+    '/adservice.google.com.br/pagead/',
+    '/adservice.google.com/adsid/integrator.js',
+    '/adservice.google.com/adsid/google_ads.js',
+    '/googletagservices.com/',
+    '/partner.googleadservices.com/',
+    '/static.doubleclick.net/',
+    '/adclick.g.doubleclick.net/',
+    '/tpc.googlesyndication.com/',
+    '/googleads.g.doubleclick.net/',
+    '/googleads4.g.doubleclick.net/',
+    '/ad.doubleclick.net/',
+    
+  ];
+  ['GET','POST'].forEach((m) => block.forEach((p) => cy.intercept(m, p, { statusCode: 204, body: '' })));
+})
+
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+
+  if (err.message.includes('Script error')) {
+    return false;
+  }
+
+  if (err.message.includes('googletagservices') || err.message.includes('doubleclick')) {
+    return false;
+  }
+})
