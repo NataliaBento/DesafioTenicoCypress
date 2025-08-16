@@ -9,6 +9,7 @@ const BTN_SUBMIT = '#submit'
 const LINHA = '.rt-tr-group'
 const BTN_DELETE = '#delete-record-4'
 const BTN_EDIT = '#edit-record-4'
+const MODAL = '.modal'
 
 Cypress.Commands.add('botaoadd', () => {
     cy.get(BTN_ADD).click()
@@ -46,6 +47,11 @@ Cypress.Commands.add('validaexclusao', () => {
 
 Cypress.Commands.add('editar', () => {
     cy.get(BTN_EDIT).click()
+})
+
+Cypress.Commands.add('editar', () => {
+  cy.get(BTN_EDIT).click()
+  cy.get(MODAL, { timeout: 10000 }).should('be.visible') // espera o modal abrir
 })
 
 Cypress.Commands.add('campoalteracao', () => {

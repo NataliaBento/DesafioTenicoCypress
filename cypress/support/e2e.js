@@ -16,7 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './pages/cadastro.page'
-import './pages/edicao.page'
+
 
 
 
