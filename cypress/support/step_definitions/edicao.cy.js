@@ -1,14 +1,23 @@
 import { Given, When, And, Then, Before, After } from 'cypress-cucumber-preprocessor/steps'
 
-And(' eu clico no icone de editar', () => {
-    cy.editar()
+Before(() => {
+  cy.visit('/')
+  cy.botaoadd()
+  cy.cadastro()
 })
 
-
-When('eu edito esse o cadastro', () => {
-    cy.editarcadastro()
+When ('clico no ícone de edicao', () => {
+  cy.editar()
 })
 
-Then('os dados atualizados devem aparecer na tabela', () => {
-    
+And('escolho um campo para alterar', () => {
+    cy.campoalteracao()
+})
+
+And('clico no botao de submit', () => {
+    cy.enviaralteracao()
+})
+
+Then('o cadastro deve ser alterado', () => {
+    cy.cadastroalterado()
 })

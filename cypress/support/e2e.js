@@ -17,7 +17,7 @@
 import './commands'
 import './pages/cadastro.page'
 import './pages/edicao.page'
-import './pages/exclusao.page'
+
 
 
 

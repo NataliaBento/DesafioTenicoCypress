@@ -1,9 +1,1 @@
-const BTN_ADD = '#addNewRecordButton';
-const INPUT_NAME = '#firstName';
-const INPUT_LAST_NAME = '#lastName';
-const INPUT_EMAIL = '#userEmail';
-const INPUT_AGE = '#age';
-const INPUT_SALARY = '#salary';
-const INPUT_DEPARTAMENT = '#department';
-const BTN_SUBMIT = '#submit';
-const LINHA = '.rt-tr-group';
+
