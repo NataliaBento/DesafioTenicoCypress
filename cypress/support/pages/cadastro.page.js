@@ -25,7 +25,7 @@ Cypress.Commands.add('cadastro', () => {
 })
 
 Cypress.Commands.add('confirmarcadastro', () => {
-    cy.get(BTN_SUBMIT).click()
+  cy.get(BTN_SUBMIT).should('be.visible').click()
 })
 
 Cypress.Commands.add('cadastroconcluido', () => {
@@ -37,35 +37,3 @@ Cypress.Commands.add('validarEmailNaTabela', () => {
     cy.contains(LINHA, Cypress.env('email'), {log: false}).should('exist')
 })
 
-Cypress.Commands.add('excluir', () => {
-  cy.get(BTN_DELETE).click()
-})
-
-Cypress.Commands.add('validaexclusao', () => {
-    cy.contains(LINHA, Cypress.env('email'), {log: false}).should('not.exist')
-})
-
-Cypress.Commands.add('editar', () => {
-    cy.get(BTN_EDIT).click()
-})
-
-Cypress.Commands.add('editar', () => {
-  cy.get(BTN_EDIT).click()
-  cy.get(MODAL, { timeout: 10000 }).should('be.visible') // espera o modal abrir
-})
-
-Cypress.Commands.add('campoalteracao', () => {
-  cy.get(INPUT_LAST_NAME, { timeout: 10000 }) 
-    .should('be.visible')                     
-    .clear()                                  
-    .type(Cypress.env('sobrenomeeditado'), { log: false }) 
-})
-
-Cypress.Commands.add('enviaralteracao', () => {
-    cy.get(BTN_SUBMIT).click()
-})
-
-
-Cypress.Commands.add('cadastroalterado', () => {
-  cy.contains(LINHA, Cypress.env('sobrenomeeditado'), { log: false }).should('exist')
-})
